@@ -1,14 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Navigation.style';
+import Logo from '../../assets/images/logo.svg';
 
-// const Navigation = ({menu[{title, link}]}) => {
-//   return <S.Header menu=[{title: 'Login', link: '/login'}]>
-//   <S.Logo />
-//   <S.Link />
-//   </S.Header>;
-// };
+const Navigation = ({ links }) => {
+  return (
+    <S.Header>
+      <S.Container>
+        <S.TopShelf>
+          <S.Logo src={Logo} alt='VetBee' />
+        </S.TopShelf>
 
-Navigation.propTypes = {};
+        <S.Nav>
+          {links &&
+            links.map((link) => (
+              <S.StyledLink href={link.link}>{link.title}</S.StyledLink>
+            ))}
+        </S.Nav>
+      </S.Container>
+    </S.Header>
+  );
+};
+
+Navigation.propTypes = {
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default Navigation;

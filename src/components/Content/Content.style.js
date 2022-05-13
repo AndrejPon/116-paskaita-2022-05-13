@@ -4,6 +4,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  margin-bottom: 0;
+`;
 
-export const Text = styled.p``;
+export const Text = styled.p`
+  font-size: 1.2rem;
+`;

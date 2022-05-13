@@ -1,0 +1,39 @@
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import * as S from './Input.style';
+
+const Input = ({ name, label, type, placeholder }) => {
+  const [value, setValue] = useState('');
+
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  return (
+    <S.InputControl>
+      <S.Label htmlFor={name}>{label}</S.Label>
+      <S.Input
+        type={type}
+        id={name}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+      />
+    </S.InputControl>
+  );
+};
+
+Input.propTypes = {
+  name: PropTypes.oneOf(['text', 'email', 'number', 'password']).isRequired,
+  label: PropTypes.string,
+  type: PropTypes.string,
+  placeholder: PropTypes.string,
+};
+
+Input.defaultProps = {
+  label: '',
+  type: 'text',
+  placeholder: '',
+};
+
+export default Input;

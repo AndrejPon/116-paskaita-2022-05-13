@@ -6,4 +6,13 @@ export default {
   component: Button,
 };
 
-export const Primary = () => <Button type='login'>LOGIN</Button>;
+export const Primary = () => (
+  <Button
+    handleClick={() => {
+      //
+    }}
+    type='login'
+  >
+    LOGIN
+  </Button>
+);
