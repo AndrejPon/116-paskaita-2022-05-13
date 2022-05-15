@@ -7,5 +7,5 @@ export default {
 };
 
 export const Default = () => (
-  <Content title='Page title' content='Some content' />
+  <Content title='Hello world'>lorem ipsum...</Content>
 );

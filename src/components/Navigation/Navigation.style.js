@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Header = styled.header`
@@ -49,7 +50,7 @@ export const Nav = styled.nav`
   }
 `;
 
-export const StyledLink = styled.a`
+export const StyledLink = styled(Link)`
   color: #000;
   display: block;
   padding: 0.5rem 0;

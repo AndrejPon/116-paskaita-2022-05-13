@@ -14,7 +14,9 @@ const Navigation = ({ links }) => {
         <S.Nav>
           {links &&
             links.map((link) => (
-              <S.StyledLink href={link.link}>{link.title}</S.StyledLink>
+              <S.StyledLink key={link.title} to={link.link}>
+                {link.title}
+              </S.StyledLink>
             ))}
         </S.Nav>
       </S.Container>

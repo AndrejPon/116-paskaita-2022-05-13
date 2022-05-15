@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-export const Title = styled.h1`
-  margin-bottom: 0;
+export const Container = styled.section`
+  margin: 0 auto;
+  max-width: 50rem;
+  padding: 1rem;
 `;
 
-export const Text = styled.p`
-  font-size: 1.2rem;
+export const Title = styled.h2`
+  font-size: 1.5rem;
+  margin-top: 0;
 `;
