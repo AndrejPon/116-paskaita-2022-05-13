@@ -3,8 +3,10 @@ import Button from '../components/Button/Button';
 import Content from '../components/Content/Content';
 import Spacing from '../components/Spacing/Spacing';
 import Input from '../components/Input/Input';
+import Notification from '../components/Notification/Notification';
 
 const Register = () => {
+  const [error, setError] = useState(false);
   const [userDetails, setUserDetails] = useState({
     email: '',
     password: '',
@@ -12,6 +14,11 @@ const Register = () => {
   return (
     <>
       <Content title='Register'>
+        {error && (
+          <Notification handleClose={() => setError(false)}>
+            {error}
+          </Notification>
+        )}
         <form
           onSubmit={async (e) => {
             e.preventDefault();
@@ -27,7 +34,8 @@ const Register = () => {
               }
             );
             const data = await res.json();
-            console.log(data);
+            setError(data.msg || data.err);
+            // console.log(data);
           }}
         >
           <Spacing padding='1rem 0'>
